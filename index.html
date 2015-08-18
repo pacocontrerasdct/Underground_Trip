@@ -4,28 +4,27 @@
   <meta charset="utf-8">
   <title>Trip Tracker</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" ></script>
 </head>
 <body>
 <div id="container">
   <div id="selectOriginLine">
     <p>Select Origin</p>
       <select id="lineOrigin">
-        <option class="line" value="originDefault" name="originDefault">Select an option</option>
-        <option class="line" value="originN" name="lineNoriginStops">Line N</option>
-        <option class="line" value="originL" name="lineLoriginStops">Line L</option>
-        <option class="line" value="origin6" name="line6originStops">Line 6</option>
+        <option class="line" value="default">Select an option</option>
+        <option class="line" value="lineNoriginStops">Line N</option>
+        <option class="line" value="lineLoriginStops">Line L</option>
+        <option class="line" value="line6originStops">Line 6</option>
       </select>  
   </div>
 
   <div id="lineNoriginStops" class="hidden">
     <select id="lineN">
-      <option class="street" value="stop0">Time Square</option>
-      <option class="street" value="stop1">34th</option>
-      <option class="street" value="stop2">28th</option>
-      <option class="street" value="stop3">23rd</option>
-      <option class="street" value="stop4">Union Square</option>
-      <option class="street" value="stop5">8th</option>
+      <option class="street" id="lineNstop0">Time Square</option>
+      <option class="street" id="lineNstop1">34th</option>
+      <option class="street" id="lineNstop2">28th</option>
+      <option class="street" id="lineNstop3">23rd</option>
+      <option class="street" id="lineNstop4">Union Square</option>
+      <option class="street" id="lineNstop5">8th</option>
     </select>
   </div>
   <div id="lineLoriginStops" class="hidden">
@@ -41,7 +40,7 @@
   <div id="selectDestinationLine">
     <p>Select Destination</p>
       <select id="lineDestination">
-        <option class="line" value="destinationDefault">Select an option</option>
+        <option class="line" value="default">Select an option</option>
         <option class="line" value="destinationN" name="destinationN">Line N</option>
         <option class="line" value="destinationL" name="destinationL">Line L</option>
         <option class="line" value="destination6" name="destination6">Line 6</option>
@@ -70,5 +69,5 @@
   
 </div>
 </body>
-<script src="main.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </html>

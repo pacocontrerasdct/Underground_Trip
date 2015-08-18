@@ -14,16 +14,36 @@
   line6 : ['Grand Central','33rd','28th','23rd','Union Square','Astor Place']
  };
 
+var namesStops;
+var fromStreet;
+
 function showLines(){
    var line = document.getElementById('lineOrigin');
-   line.addEventListener("click", function(event){
-     var name = line.value;
+   line.addEventListener("change", function(event){
+     namesStops = line.value;
+      showStops(namesStops);
    });
 };
 
-var name = showLines();
-
-function showStops(){
-  var lineStreets = document.getElementById(name);
-  lineStreets.class = 'show';
+function showStops(namesStops){
+  var lineStreets = document.getElementById(namesStops);
+  if(namesStops === "default"){
+    lineStreets.className = "hidden";
+  }else{
+    lineStreets.className = "show";
+  };
 };
+
+function selectStartingPoint(){
+  var street = document.getElementsByClassName('street')[1];
+  fromStreet = street.id;
+  console.log("es: ",fromStreet);
+
+  
+};
+
+selectStartingPoint(fromStreet);
+
+showLines();
+
+
