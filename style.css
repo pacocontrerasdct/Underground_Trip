@@ -1,0 +1,12 @@
+
+
+#lineNoriginStops, #lineLoriginStops, #line6originStops, #lineNdestinationStops, #lineLdestinationStops, #line6destinationStops{
+
+}
+
+.hidden {
+  display: none;
+}
+.show {
+  display: inline-block;
+};
