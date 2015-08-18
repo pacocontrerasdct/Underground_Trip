@@ -1,48 +1,50 @@
- /*
- underground
- lineN 
- 'Time Square','34th','28th','23rd','Union Square','8th'
- lineL
- '8th','6th','Union Square','3rd','1st'
- line6
- 'Grand Central','33rd','28th','23rd','Union Square','Astor Place'
- */
 
- underground = {
+var underground = {
   lineN : ['Time Square','34th','28th','23rd','Union Square','8th'],
   lineL : ['8th','6th','Union Square','3rd','1st'],
   line6 : ['Grand Central','33rd','28th','23rd','Union Square','Astor Place']
  };
-
+//var cName = elementNodeReference.className;
 var namesStops;
+
+// Getting info form drop menus (have to add .value to tha variable)
+var fromLine  = 'lineOrigin';
+var toLine  = 'lineDestination';
+
 var fromStreet;
+var toStreet;
 
 function showLines(){
-   var line = document.getElementById('lineOrigin');
-   line.addEventListener("change", function(event){
-     namesStops = line.value;
-      showStops(namesStops);
+    event = document.getElementById(fromLine);
+    event.addEventListener("change", function(event){
+      // Showing stops of the line
+      showStops(this.value);
    });
 };
 
-function showStops(namesStops){
-  var lineStreets = document.getElementById(namesStops);
-  if(namesStops === "default"){
-    lineStreets.className = "hidden";
+
+function showStops(event){
+  var event = document.getElementById(event);
+  if(event === "default"){
+    event.className = "hidden";
   }else{
-    lineStreets.className = "show";
+    event.className = "show";
+
+    selectStartingPoint(event);
+
   };
 };
 
-function selectStartingPoint(){
-  var street = document.getElementsByClassName('street')[1];
-  fromStreet = street.id;
-  console.log("es: ",fromStreet);
+function selectStartingPoint(event){
+  var event = event.getElementsByClassName('street');
+  event = event[0]['id'];
+  console.log("es: ", event);
+  fromStreet = event.dataset.dataNum;
 
-  
+  console.log("es: ",fromStreet);
 };
 
-selectStartingPoint(fromStreet);
+//selectStartingPoint(fromStreet);
 
 showLines();
 
