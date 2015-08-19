@@ -14,32 +14,53 @@ var toLine  = 'lineDestination';
 var fromStreet;
 var toStreet;
 
+//var div_list = document.querySelectorAll('div'); // returns NodeList
+//var div_array = Array.prototype.slice.call(div_list); // converts NodeList to Array
+//console.log("DIV: ", div_array[7]);
+
 function showLines(){
-    event = document.getElementById(fromLine);
+    event = document.getElementById('selectOriginLine');
+
+    
+
+    console.log("es1: " , event);
+
+    
+
+
     event.addEventListener("change", function(event){
       // Showing stops of the line
+      
+    console.log("es2: ", event);
       showStops(this.value);
    });
 };
 
 
 function showStops(event){
+  console.log("es3: ", event);
   var event = document.getElementById(event);
-  if(event === "default"){
-    event.className = "hidden";
-  }else{
-    event.className = "show";
-
-    selectStartingPoint(event);
-
-  };
+  console.log("es4: ", event);
+  
+  event.addEventListener("change", function(event){
+    if(event === "hidden"){
+      event.className = "hidden";
+    }else{
+      event.className = "show";
+    };
+  });
+    //event.addEventListener("change", function(event){
+      // Showing stops of the line
+     // selectStartingPoint(event);
+    //});
+  
 };
 
 function selectStartingPoint(event){
   var event = event.getElementsByClassName('street');
   event = event[0]['id'];
   console.log("es: ", event);
-  fromStreet = event.dataset.dataNum;
+  fromStreet = event.data;
 
   console.log("es: ",fromStreet);
 };
